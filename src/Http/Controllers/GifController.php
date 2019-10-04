@@ -71,6 +71,6 @@ class GifController
         $queryParameters = [];
         parse_str($querystring, $queryParameters);
 
-        Return isset($queryParameters[$parameterName]) ? $queryParameters[$parameterName] : $defaultValue;
+        return isset($queryParameters[$parameterName]) ? $queryParameters[$parameterName] : $defaultValue;
     }
 }
