@@ -2,10 +2,10 @@
 
 ## Endpoints
 
-|Name|Path|Sample Response|
----------------------------
-|Random|/v1/gifs/random|{"data":[{"title":"My Random GIF", "url": "http://www.mygifs.com/random.gif"}]}
-|Search|/v1/gifs/search?q=banana|{"data":{"title":"My Banana GIF", "url": "http://www.mygifs.com/banana.gif"}}
+|Name  |Path                    |Sample Response                                                                |
+|------|------------------------|-------------------------------------------------------------------------------|
+|Random|/v1/gifs/random         |{"data":[{"title":"My Random GIF", "url": "http://www.mygifs.com/random.gif"}]}
+|Search|/v1/gifs/search?q=banana|{"data":{"title":"My Banana GIF", "url": "http://www.mygifs.com/banana.gif"}}  |
 
 ## Usage
 
