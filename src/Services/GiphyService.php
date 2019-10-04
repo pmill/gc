@@ -36,12 +36,14 @@ class GiphyService implements GifServiceInterface
      */
     public function search(string $searchTerm, int $page, int $pageSize): array
     {
+        $offset = ($page - 1) * $pageSize;
+
         try {
             $result = $this->client->gifsSearchGet(
                 $this->apiKey,
                 $searchTerm,
-                $page,
-                $pageSize
+                $pageSize,
+                $offset
             );
 
             $foundGifs = $result->getData();
