@@ -44,7 +44,14 @@ class GifController
         }
 
         $page = $this->getQueryParameter('page', 1);
+        if ($page <= 0) {
+            throw new HttpInvalidArgumentException('page', $page);
+        }
+
         $pageSize = $this->getQueryParameter('pageSize', 10);
+        if ($pageSize <= 0 || $pageSize > 100) {
+            throw new HttpInvalidArgumentException('pageSize', $pageSize);
+        }
 
         return $this->gifService->search($searchTerm, $page, $pageSize);
     }

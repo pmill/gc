@@ -69,4 +69,28 @@ class GifControllerTest extends TestCase
 
         $this->assertEquals($randomGif, $foundGif);
     }
+
+    public function testSearchingWithInvalidPageParameter()
+    {
+        $this->expectException(HttpInvalidArgumentException::class);
+
+        $gifServiceMock = Mockery::mock(GifServiceInterface::class);
+
+        $request = Request::create('http://localhost/v1/gif/search?page=0', 'GET');
+
+        $controller = new GifController($gifServiceMock, $request);
+        $controller->search();
+    }
+
+    public function testSearchingWithInvalidPageSizeParameter()
+    {
+        $this->expectException(HttpInvalidArgumentException::class);
+
+        $gifServiceMock = Mockery::mock(GifServiceInterface::class);
+
+        $request = Request::create('http://localhost/v1/gif/search?pageSize=101', 'GET');
+
+        $controller = new GifController($gifServiceMock, $request);
+        $controller->search();
+    }
 }
