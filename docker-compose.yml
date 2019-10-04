@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  api:
+    container_name: api
+    image: php:7-fpm-alpine3.10
+    volumes:
+      - ./:/app
+
+  api-nginx:
+    container_name: api-nginx
+    image: nginx:1.17.4-alpine
+    ports:
+      - "9998:80"
+    volumes:
+      - ./build/nginx.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - api:fastcgi-app

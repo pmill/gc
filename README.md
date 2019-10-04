@@ -17,14 +17,20 @@ You can start the local PHP development server with the following command:
 
 ```
 cd public
-php -S localhost:8000
+php -S localhost:9998
+```
+
+Alternatively you can use Docker Compose with the command:
+
+```
+docker-compose up -d
 ```
 
 You can then make requests to the API, such as:
 
 ```
 curl -X GET \
-  'http://localhost:8000/v1/gifs/search?q=banana' \
+  'http://localhost:9998/v1/gifs/search?q=banana' \
   -H 'API_KEY: f8eeee38-5772-4eb1-8d86-d3d3247f5b52'
 ```
 
