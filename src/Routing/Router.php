@@ -44,6 +44,8 @@ class Router
     }
 
     /**
+     * Finds a matching route from the given request
+     *
      * @param Request $request
      *
      * @return ResolvedRoute

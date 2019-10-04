@@ -34,6 +34,8 @@ class RouteDispatcher
     }
 
     /**
+     * Executes the controller code for the given resolved route and returns the result
+     *
      * @param ResolvedRoute $resolvedRoute
      *
      * @return mixed

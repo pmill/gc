@@ -36,7 +36,7 @@ class Application
     }
 
     /**
-     * Sets up dependencies
+     * Sets up dependencies for anything that can't be setup with autowiring
      */
     protected function setupDependencyInjection()
     {
@@ -72,7 +72,12 @@ class Application
     }
 
     /**
-     * Runs the application
+     * Runs the application:
+     *
+     * 1. Resolve the route from the request
+     * 2. Check authorisation
+     * 3. Dispatch the route and get the result from the controller
+     * 4. Pass the result to the presenter to send a response to the browser
      */
     public function run()
     {
